@@ -1,58 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/knowledge.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-    <title>Document</title>
+ <title>Cards</title>
+ 
 </head>
-<body>
-<nav id="navbar-example2" class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <a class="nav-link" href="#fat">@fat</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#mdo">@mdo</a>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#one">one</a>
-        <a class="dropdown-item" href="#two">two</a>
-        <div role="separator" class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#three">three</a>
-      </div>
-    </li>
-  </ul>
-</nav>
-<div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-    <div class="part">
-    <h4 id="fat">@fat</h4>
-    <img src="productImage/khichdi1.jpg" alt="">
-    <p>shreya</p>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    </div>
+<style type="text/css">
+
+
+*{
+ margin: 0px;
+ padding: 0px;
+ background-color: black;
+}
+body{
+ font-family: arial;
+}
+.main{
+
+ margin: 2%;
+}
+
+.card{
+     width: 20%;
+     display: inline-block;
+     color:white; 
+     box-shadow: 2px 2px 20px white;
+     border-radius: 5px; 
+     margin: 2%;
+    }
+
+.card:hover{
+  background-color: white;
+  color: green;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.image img{
+  width: 100%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  height:200px;
   
-  <h4 id="mdo">@mdo</h4>
-  <p>...</p>
-  <h4 id="one">one</h4>
-  <p>...</p>
-  <h4 id="two">two</h4>
-  <p>...</p>
-  <h4 id="three">three</h4>
-  <p>...</p>
+
+ 
+ }
+
+.title{
+ 
+  text-align: center;
+  padding: 10px;
+  
+ }
+
+h1{
+  font-size: 20px;
+ }
+
+.des{
+  padding: 3px;
+  text-align: center;
+ 
+  padding-top: 10px;
+        border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+button{
+  margin-top: 40px;
+  margin-bottom: 10px;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding:10px;
+}
+
+</style>
+<body>
+
+<div class="main">
+
+ <!--cards -->
+
+<div class="card">
+
+<div class="image">
+   <img src="productImage/peddyy.jpg">
 </div>
+<div class="title">
+ <h1>
+Peddy</h1>
+</div>
+<div class="des">
+<a href="peddy.php"><button>Read More...</button></a>
+</div>
+</div>
+<!--cards -->
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<div class="card">
+
+<div class="image">
+   <img src="productImage/wheat.jpg">
+</div>
+<div class="title">
+  <h1>
+  Wheat</h1>
+</div>
+<div class="des">
+ <p>You can Add Desccription Here...</p>
+<a href="wheat.php"><button>Read More...</button></a>
+</div>
+</div>
+<!--cards -->
 
 
+<div class="card">
+
+<div class="image">
+   <img src="productImage/potato.jpg">
+</div>
+<div class="title">
+ <h1>
+Potato</h1>
+</div>
+<div class="des">
+ <p>You can Add Desccription Here...</p>
+<a href="potato.php"><button>Read More...</button></a>
+</div>
+</div>
+<!--cards -->
+
+
+<div class="card">
+
+<div class="image">
+   <img src="productImage/sugarcane.png">
+</div>
+<div class="title">
+ <h1>
+Sugarcane</h1>
+</div>
+<div class="des">
+ <p>You can Add Desccription Here...</p>
+ <a href="sugarcane.php"><button>Read More...</button></a>
+</div>
+</div>
+<!--cards -->
+
+
+<div class="card">
+
+<div class="image">
+   <img src="productImage/corn.jpg">
+</div>
+<div class="title">
+ <h1>
+Corn</h1>
+</div>
+<div class="des">
+ <p>You can Add Desccription Here...</p>
+ <a href="corn.php"><button>Read More...</button></a>
+</div>
+</div>
+<!--cards -->
+
+<div class="card">
+
+<div class="image">
+   <img src="productImage/onion.jpg">
+</div>
+<div class="title">
+ <h1>
+Onion</h1>
+</div>
+<div class="des">
+ <p>You can Add Desccription Here...</p>
+ <a href="onion.php"><button>Read More...</button></a>
+</div>
+</div>
+<!--cards -->
+
+<div class="card">
+
+<div class="image">
+   <img src="productImage/chili.jpg">
+</div>
+<div class="title">
+ <h1>
+Chili</h1>
+</div>
+<div class="des">
+ <p>You can Add Desccription Here...</p>
+ <a href="chili.php"><button>Read More...</button></a>
+
+</div>
+</div>
+<!--cards -->
+
+
+<div class="card">
+
+<div class="image">
+   <img src="productImage/tomato.jpg">
+</div>
+<div class="title">
+ <h1>
+Tomato</h1>
+</div>
+<div class="des">
+ <p>You can Add Desccription Here...</p>
+ <a href="tomato.php"><button>Read More...</button></a>
+</div>
+</div>
+<!--cards -->
+
+
+<div class="card">
+
+<div class="image">
+   <img src="productImage/garlic.jpg">
+</div>
+<div class="title">
+ <h1>
+Garlic</h1>
+</div>
+<div class="des">
+ <p>You can Add Desccription Here...</p>
+ <a href="garlic.php"><button>Read More...</button></a>
+</div>
+</div>
+</div>
 </body>
 </html>

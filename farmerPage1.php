@@ -30,10 +30,13 @@
 
 	if(isset($_POST['r_submit'])){
 		$r_code = $_POST['r_code'];
-		$rf_name = $_POST['rf_name'];
 		
-		$query = "DELETE FROM advertisement WHERE code='$r_code' AND itemName='$rf_name'";
+		$query = "DELETE FROM advertisement WHERE code='$r_code'";
 		$run = mysqli_query($db, $query);
+
+		$query1 = "DELETE FROM payment WHERE code='$r_code' ";
+		$run1 = mysqli_query($db, $query1);
+
 
 		if($run){
 			$message2 = "Item Removed successfully.!";
@@ -69,7 +72,134 @@
 <html>
 <head>
 	<title>Inventory </title>
-	<link rel="stylesheet" type="text/css" href="css/admin_page1.css">
+
+
+	<style>
+		*{
+	margin:  0;
+	padding: 0;
+	font-family: Arial;
+}
+body{
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url(../index.jpg);
+	background-size: auto 1000px;
+}
+ul{
+	float: right;
+	list-style-type: none;
+	margin-top: 25px;
+
+}
+
+ul li{
+	display: inline-block;
+}
+ul li a{
+	text-decoration: none;
+	color: #fff;
+	padding: 5px 20px;
+	transition: 0.7s ease;
+	display: block;
+}
+ul li a:hover{
+	background-color: #176b0a;
+	color: #000;
+}
+
+.main{
+	max-width: 1200px;
+	margin: auto;
+
+}
+
+ul li ul li{
+	display: list-item;
+	display: none;
+}
+ul li:hover ul li{
+	display:block;
+	background-color: #176b0a;
+}
+
+.tablink {
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: auto;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    padding: 0px;
+	margin: 0px;
+	font-family: 'Nunito',sans-serif;
+	font-size: 15px;
+	position: center;
+
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	color: #10e5aa;
+}
+.tabcontent input, button{
+	font-family: 'Nunito',sans-serif;
+	font-weight: 700;
+}
+.tabcontent{
+	width: 25%;
+	margin: 0px auto;
+	margin-top: 20px;
+	padding: 20px;
+}
+.tabcontent input{
+	display: block;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background: #fff;
+	padding: 15px;
+	outline: none;
+	width: 100%;
+	margin-bottom: 20px;
+	transition: 0.3s;
+	-webkit-transition:0.3s;
+	-moz-transition:0.3s;
+	background-position: center;
+}
+.tabcontent button{
+	background: #48787e  ;
+	color: #fff;
+	border: 1px solid #5d8ffc;
+	border-radius: 5px;
+	padding: 15px;
+	display: block;
+	width: 100%;
+	transition: 0.3s;
+	-webkit-transition:0.3s;
+	-moz-transition:0.3s;
+
+}
+.tabcontent button:hover{
+	background: #fff;
+	color: #5d8ffc;
+	border: 1px solid #5d8ffc;
+	cursor: pointer;
+}
+.tabcontent a{
+	color: #fff;
+}
+
+
+
+	</style>
 </head>
 <body>
 	<header>
@@ -98,6 +228,11 @@
 						<li> <a class="tablink" href="viewAdvertisement.php">View</a></li>
 					</ul>
 				</li>
+				<li > <a href="#">View Order</a>
+					<ul>
+						<li> <a class="tablink" href="vieworder.php">Order</a></li>
+					</ul>
+				</li>
 				<li > <a href="logout.php">Logout</a></li>
 			</ul>
 			
@@ -111,13 +246,13 @@
 				<b>Item code</b>
 			    <input type="text" placeholder="Enter Code- ABC-yourcode" name="ItemCode" required><br>
 			    <b>Quantity</b>
-			    <input type="number" placeholder="Enter Quantity" name="Pquantity" required><br>
+			    <input type="text" placeholder="Enter Quantity" name="Pquantity" required><br>
 				<b>Image</b>
 			    <input type="file" name="fileToUpload"  id="fileToUpload" required><br>
 			    <b>Price</b>
-			    <input type="number" placeholder="Enter..." name="amount" required><br>
+			    <input type="text" placeholder="Enter price(unit price)" name="amount" required><br>
 				<b>Phone Number</b>
-			    <input type="number" placeholder="Enter..." name="phoneNumber" required><br>
+			    <input type="tel" placeholder="Enter..." name="phoneNumber" pattern="[0-9]{11}" required><br>
 			    <button type="submit" name="af_submit" class="registerbtn" value="upload">Submit</button>
         </form>
         </div>
@@ -127,9 +262,6 @@
 					    <h1>	<center>Remove Items</center> </h1><br><br>
 					    <b>Code</b>
 					    <input type="text" placeholder="Enter .." name="r_code" required>
-					    <b>Item Name</b>
-					    <input type="text" placeholder="Enter name" name="rf_name" required><br>
-
 					    <button type="submit" name="r_submit" class="registerbtn">Submit</button>
 			    </form>
 

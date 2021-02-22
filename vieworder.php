@@ -4,18 +4,18 @@
 
   // Initialize message variable
   $msg = "";
-  $result = mysqli_query($db, "SELECT * FROM advertisement");
+  $result = mysqli_query($db, "SELECT * FROM payment");
 
     while ($row = mysqli_fetch_array($result)) {
       echo "<form name=\"farmer\" action=\"viewAdvertisement.php\" method=\"get\">";
         echo "<div id='img_div'>";
-            echo "<img src='".$row['image']."' >";
             echo "Code :- ".$row['code']."</p>";
-            echo "Name :- ".$row['itemName']."</p>";
-            echo "Quantity :- ".$row['quantity']."</p>";
-            echo "Price :- ".$row['price']."</p>";
-            echo "Seller Phone No :- ".$row['phoneNumber']."</p>";
-            echo "<button  class=\"btn btn-danger\"  name=\"bsubmit\" formaction=\"checkout.php\">BUY NOW</button>";
+            echo "Name :- ".$row['name']."</p>";
+            echo "Email :- ".$row['email']."</p>";
+            echo "Transaction Id:- ".$row['transactionId']."</p>";
+            echo " Address :- ".$row['address']."</p>";
+            echo " City :- ".$row['city']."</p>";
+            echo " Phone No :- ".$row['phoneNumber']."</p>";
         echo "</div>";
         echo "</form>";
       }
@@ -27,21 +27,21 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 <style type="text/css">
-*{
-  
-}
    #content{
    	width: 50%;
    	margin: 20px auto;
    	border: 1px solid #cbcbcb;
+    
    }
-  
+   
    #img_div{
    	width: 90%;
    	padding: 5px;
    	margin: 15px auto;
    	border: 4px solid #cbcbcb;
-     background-color:cyan;
+    font-weight: bold;
+    background-color:#9dc6c9;
+    border-radius: 2ex;
    }
    #img_div:after{
    	content: "";

@@ -10,7 +10,7 @@
 		$address = $_POST['address'];
 		$phnno = $_POST['phnno'];
 
-		$query = "INSERT INTO registration(name, password, email, address, phoneNumber) VALUES ('$name' , '$password', '$email','$address','$phnno')";
+		$query = "INSERT INTO Bregistration(name, password, email, address, phoneno) VALUES ('$name' , '$password', '$email','$address','$phnno')";
 		$run = mysqli_query($db, $query);
 
 		if($run){
@@ -26,10 +26,10 @@
 		$password = $_POST['lpassword'];
 
 		$mysqli = new mysqli("localhost","root","","farmer");
-		$result = $mysqli->query("SELECT * FROM registration WHERE name = '$lname' AND password ='$password' ");
+		$result = $mysqli->query("SELECT * FROM Bregistration WHERE name = '$lname' AND password ='$password' ");
 		$row = $result->fetch_assoc();
 		if($row['name'] == $lname && $row['password'] == $password ){
-			header("Location:farmerPage1.php");
+			header("Location:viewAdvertisement.php");
         exit();
 		}
 		else{
@@ -118,13 +118,12 @@
 .form .register-form{
 	display: none;
 }
-	</style>
 </head>
 <body>
 	<div class="login-page">
 		<div class="form">
-			<form action="farmerLogin.php" method="post" class="register-form">	
-			    <p class="msg">Farmer Registration</p>
+			<form action="buyerLogin.php" method="post" class="register-form">	
+			    <p class="msg">Buyer Registration</p>
 			    <input type="text" placeholder="Enter Name" name="name" required>
 			    <input type="number" placeholder="Enter phone number" name="phnno" required>
                 <input type="text" name="address" placeholder="Enter address" required>
@@ -134,8 +133,8 @@
 				<p class="message"><a href="#">Already Registered? Login</a></p>
 			</form>
 
-			<form action="farmerLogin.php" method="post" class="login-form">
-				<p class="msg">Farmer Login</p>
+			<form action="buyerLogin.php" method="post" class="login-form">
+				<p class="msg">Buyer Login</p>
 				<input type="name" name="lname" placeholder="name">
 				<input type="password" name="lpassword" placeholder="password">
 				<button name="login">Log in</button>
@@ -149,7 +148,7 @@
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstarp.min.js"></script>
 	<script src="js/custom.js"></script>
-
+    
 	<script>
 		$('.message a').click(function(){
 			$('form').animate({height: "toggle",opacity: "toggle"}, "slow");
