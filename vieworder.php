@@ -33,6 +33,15 @@
    	border: 1px solid #cbcbcb;
     
    }
+
+
+   body{
+    background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url(../index.jpg);
+		height: 100vh;
+		background-size: cover;
+		background-position: center;
+  
+}
    
    #img_div{
    	width: 90%;
@@ -40,8 +49,8 @@
    	margin: 15px auto;
    	border: 4px solid #cbcbcb;
     font-weight: bold;
-    background-color:#9dc6c9;
-    border-radius: 2ex;
+    border-radius:2ex;
+    background-color: #4E9258;
    }
    #img_div:after{
    	content: "";

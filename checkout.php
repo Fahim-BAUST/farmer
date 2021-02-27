@@ -34,6 +34,10 @@ body {
   font-family: Arial;
   font-size: 17px;
   padding: 8px;
+  background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url(../index.jpg);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
 }
 
 * {
@@ -70,10 +74,11 @@ body {
 }
 
 .container {
-  background-color: #f2f2f2;
+  background-color: #4E9258;
   padding: 5px 20px 15px 20px;
   border: 1px solid lightgrey;
   border-radius: 3px;
+  
 }
 
 input[type=text] {
@@ -96,7 +101,7 @@ label {
 }
 
 .btn {
-  background-color: #4CAF50;
+  background-color: #bfbf1f;
   color: white;
   padding: 12px;
   margin: 10px 0;
@@ -108,7 +113,8 @@ label {
 }
 
 .btn:hover {
-  background-color: #45a049;
+  background-color: #8c350f;
+  color:white;
 }
 
 a {
@@ -144,26 +150,26 @@ span.price {
           <div class="col-50">
             <h3>Billing Address</h3>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="name" placeholder="Nahin Rukeiya Jhumur">
+            <input type="text" id="fname" name="name" placeholder="Nahin Rukeiya Jhumur" required>
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="jhumur@example.com">
+            <input type="text" id="email" name="email" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" placeholder="jhumur@example.com" required>
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" required> 
             <label for="city"><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="Rangpur">
+            <input type="text" id="city" name="city" placeholder="Rangpur" required>
           </div>
 
           <div class="col-50">
             <h3>Payment</h3>
             <label for="fname">Accepted payment system : bkash/rocket/nogod</label>
-            <label style="background-color:DodgerBlue; color:white;" for="cname">Give the transaction id if the payment is successful</label>
+            <label  for="cname">Give the transaction id if the payment is successful</label>
 
             <label for="ccode">Item Code No</label>
-            <input type="text" id="ccode" name="code" placeholder="A-123">
+            <input type="text" id="ccode" name="code" placeholder="A-123" required>
             <label for="ccnum">Transaction id</label>
-            <input type="text" id="ccnum" name="tid" placeholder="aihd7327s">
+            <input type="text" id="ccnum" name="tid" placeholder="aihd7327s" required>
             <label for="expmonth">Phone Number</label>
-            <input type="tel" id="expmonth" name="phnno" pattern="[0-9]{11}" placeholder="01000000000">
+            <input type="tel" id="expmonth" name="phnno" pattern="[0-9]{11}" placeholder="01000000000" required>
           </div>       
         </div>
         <button class="btn" type="submit" name="submit">Continue to checkout</button>

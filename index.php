@@ -71,7 +71,6 @@ ul li:hover ul li{
 	background-color: #176b0a;
 }
 </style>
-	
 </head>
 <body>
 	<header>
@@ -93,7 +92,6 @@ ul li:hover ul li{
 					</ul>
 				</li>
 			</ul>
-			
 		</div>
 		<div class="title">
 			<h1><center>WELCOME <br/>  TO <br/>farmers.com</center></h1>

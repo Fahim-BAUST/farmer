@@ -245,18 +245,19 @@ ul li:hover ul li{
 			    <input type="text" placeholder="Enter name" name="food_name" required>
 				<b>Item code</b>
 			    <input type="text" placeholder="Enter Code- ABC-yourcode" name="ItemCode" required><br>
-			    <b>Quantity</b>
-			    <input type="text" placeholder="Enter Quantity" name="Pquantity" required><br>
+				<b>Unit price (Per KG= (?)Taka)</b>
+			    <input class="price" type="number" placeholder="50" name="unitprice" required><br>
+			    <b>Quantity(kg)</b>
+			    <input class="quantity" type="number" value="1" placeholder="Enter Quantity" name="Pquantity" required><br>
 				<b>Image</b>
 			    <input type="file" name="fileToUpload"  id="fileToUpload" required><br>
-			    <b>Price</b>
-			    <input type="text" placeholder="Enter price(unit price)" name="amount" required><br>
+			    <b>Price(taka)</b>
+			    <input class="total" id="total" type="number" placeholder="Enter price(unit price)" name="amount" required><br>
 				<b>Phone Number</b>
 			    <input type="tel" placeholder="Enter..." name="phoneNumber" pattern="[0-9]{11}" required><br>
 			    <button type="submit" name="af_submit" class="registerbtn" value="upload">Submit</button>
         </form>
         </div>
-
         	<div id="Remove" class="tabcontent"><br>
         		<form action="farmerPage1.php" method="post" enctype="multipart/form-data">
 					    <h1>	<center>Remove Items</center> </h1><br><br>
@@ -291,4 +292,15 @@ ul li:hover ul li{
 	<script type="text/javascript" src="farmerPage1.js"></script>
 
 </body>
+
+<script>
+$(document).ready(function () {
+	$(".checkout").on("keyup", ".quantity", function () {
+		var price = +$(".price").data("price");
+		var quantity = +$(this).val();
+		$("#total").text("$" + price * quantity);
+	});
+});
+
+</script>
 </html>

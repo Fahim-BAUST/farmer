@@ -15,11 +15,20 @@
  background-color: black;
 }
 body{
- font-family: arial;
+   background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url(../index.jpg);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+   height:1250px;
 }
 .main{
 
- margin: 2%;
+   margin-left:2%;
+   background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url(../index.jpg);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+   height:1200px;
 }
 
 .card{
@@ -93,6 +102,7 @@ button{
 Peddy</h1>
 </div>
 <div class="des">
+<p>Seed is a living product that must...</p>
 <a href="peddy.php"><button>Read More...</button></a>
 </div>
 </div>
@@ -100,18 +110,16 @@ Peddy</h1>
 
 
 <div class="card">
-
-<div class="image">
-   <img src="productImage/wheat.jpg">
-</div>
-<div class="title">
-  <h1>
-  Wheat</h1>
-</div>
-<div class="des">
- <p>You can Add Desccription Here...</p>
-<a href="wheat.php"><button>Read More...</button></a>
-</div>
+   <div class="image">
+      <img src="productImage/wheat.jpg">
+   </div>
+   <div class="title">
+      <h1>Wheat</h1>
+   </div>
+   <div class="des">
+      <p>You can Add Desccription Here...</p>
+      <a href="wheat.php"><button>Read More...</button></a>
+   </div>
 </div>
 <!--cards -->
 

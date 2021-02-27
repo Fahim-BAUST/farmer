@@ -15,7 +15,7 @@
             echo "Quantity :- ".$row['quantity']."</p>";
             echo "Price :- ".$row['price']."</p>";
             echo "Seller Phone No :- ".$row['phoneNumber']."</p>";
-            echo "<button  class=\"btn btn-danger\"  name=\"bsubmit\" formaction=\"checkout.php\">BUY NOW</button>";
+            echo "<button  class=\"btn btn-warning\"  name=\"bsubmit\" formaction=\"checkout.php\">BUY NOW</button>";
         echo "</div>";
         echo "</form>";
       }
@@ -27,7 +27,11 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 <style type="text/css">
-*{
+body{
+    background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url(../index.jpg);
+		height: 100vh;
+		background-size: cover;
+		background-position: center;
   
 }
    #content{
@@ -41,7 +45,8 @@
    	padding: 5px;
    	margin: 15px auto;
    	border: 4px solid #cbcbcb;
-     background-color:cyan;
+     border-radius:2ex;
+    background-color: #4E9258;
    }
    #img_div:after{
    	content: "";
@@ -57,7 +62,7 @@
 </style>
 </head>
 <body>
-<div id="content">
+<div id="content" >
   
 
 </div>

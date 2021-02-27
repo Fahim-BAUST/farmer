@@ -118,6 +118,7 @@
 .form .register-form{
 	display: none;
 }
+</style>
 </head>
 <body>
 	<div class="login-page">
@@ -125,9 +126,9 @@
 			<form action="buyerLogin.php" method="post" class="register-form">	
 			    <p class="msg">Buyer Registration</p>
 			    <input type="text" placeholder="Enter Name" name="name" required>
-			    <input type="number" placeholder="Enter phone number" name="phnno" required>
+			    <input type="number" placeholder="Enter phone number" name="phnno" pattern="[0-9]{11}" required>
                 <input type="text" name="address" placeholder="Enter address" required>
-			    <input type="text" name="email" placeholder="Enter email" required>
+			    <input type="text" name="email" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" placeholder="jhumur@example.com" required>
 			    <input type="password" placeholder="Enter Password" name="password" required>
 				<button name="submit">Create</button> 				
 				<p class="message"><a href="#">Already Registered? Login</a></p>
@@ -135,8 +136,8 @@
 
 			<form action="buyerLogin.php" method="post" class="login-form">
 				<p class="msg">Buyer Login</p>
-				<input type="name" name="lname" placeholder="name">
-				<input type="password" name="lpassword" placeholder="password">
+				<input type="name" name="lname" placeholder="name" required>
+				<input type="password" name="lpassword" placeholder="password" required>
 				<button name="login">Log in</button>
 				<p class="message"><a href="#">Not Registered?  Register</a></p>
 			</form>
