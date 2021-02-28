@@ -2,7 +2,8 @@
     session_start();
 	$db = new mysqli("localhost","root","","farmer");
 
-	if(isset($_POST['submit'])){
+	if(isset($_POST['submit']))
+  {
 		$name = $_POST['name'];
 		$email = $_POST['email'];
 		$address = $_POST['address'];
@@ -14,15 +15,30 @@
 		$query = "INSERT INTO payment(name, email, address, phoneNumber,code ,city,transactionId) VALUES ('$name' , '$email','$address','$phnno','$code','$city','$transaction')";
 		$run = mysqli_query($db, $query);
 
-		if($run){
-			$message1 = "Payment Request successfuly done!";
-			echo "<script type='text/javascript'>alert('$message1');</script>";
-		}else{
-			echo "error".mysql_error($db);
-		}
+    $to = $email;
+    $subject = "Payment Details";
+    $from = "From:baust.cse.160201094@email.com";
+
+    //Compose a simple HTML email message
+    $message = "\r\nName: " . strip_tags($_POST['name']) ."";
+    $message .= "\r\nEmail: " . strip_tags($_POST['email']) ."";
+    $message .= "\r\nCode: " . strip_tags($_POST['code']) ."";
+    $message .= "\r\nCity: " . strip_tags($_POST['city']) ."";
+    $message .= "\r\nPhone number : " . $_POST['phnno'] .""; 
+    $message .= " \r\nTransaction ID : " . $_POST['tid'] .""; 
+ 
+
+    // Sending email
+    if(mail($to, $subject, $message, $from) && $run ){
+        $message1 = "Payment Request successfuly done! and a mail has been sent to your email.";
+        echo "<script type='text/javascript'>alert('$message1');</script>";
+    } else{
+      $message2 = "Unable to send email. Please try again.";
+      echo "<script type='text/javascript'>alert('$message2');</script>";
+    }
+
 	}
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -45,25 +61,25 @@ body {
 }
 
 .row {
-  display: -ms-flexbox; /* IE10 */
+  display: -ms-flexbox; 
   display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: 0 -16px;
 }
 
 .col-25 {
-  -ms-flex: 25%; /* IE10 */
+  -ms-flex: 25%; 
   flex: 25%;
 }
 
 .col-50 {
-  -ms-flex: 50%; /* IE10 */
+  -ms-flex: 50%; 
   flex: 50%;
 }
 
 .col-75 {
-  -ms-flex: 75%; /* IE10 */
+  -ms-flex: 75%; 
   flex: 75%;
 }
 
@@ -152,7 +168,7 @@ span.price {
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
             <input type="text" id="fname" name="name" placeholder="Nahin Rukeiya Jhumur" required>
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" placeholder="jhumur@example.com" required>
+            <input type="email" id="email" name="email" placeholder="jhumur@example.com" required>
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
             <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" required> 
             <label for="city"><i class="fa fa-institution"></i> City</label>
